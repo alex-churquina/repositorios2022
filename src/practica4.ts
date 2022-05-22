@@ -22,5 +22,8 @@ if (precioTotal > 1000) {
   precioFinal = precioTotal - descuento;
   console.log("El precio con descuento es el siguiente: ", precioFinal);
 } else {
-  console.log("Su compra NO tiene descuento");
+  console.log(
+    "Su compra NO tiene descuento, El monto a pagaar es: ",
+    precioTotal
+  );
 }
