@@ -10,4 +10,17 @@ indicándonos que hemos agotado
 todas las oportunidades
 • Si acertamos la clave, saldremos
 directamente del programa*/
-let clave: string;
+
+let clave: string = "0";
+let contadorIntentos: number = 0;
+
+while (clave !== "eureka" && contadorIntentos < 3) {
+  clave = prompt("Ingrese la clave");
+  if (clave === "eureka") {
+    console.log("Su clave es correcta, Bienvenido");
+  } else {
+    console.log("Su clave es incorrecta");
+    contadorIntentos++;
+  }
+}
+console.log("FIN");
