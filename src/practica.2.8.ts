@@ -22,7 +22,7 @@ function dibujarLineas(){
 let numero1:number = Number(prompt("Ingrese primer numero"));
 let numero2:number = Number(prompt("Ingrese segundo numero"));
 let opcion:number = Number(prompt("Opcion 1 sumar, Opcion 2 restar, Opcion 3 dividir, Opcion 4 multiplicar"));
-let calculadora:number = 1;
+let calculadora:number;
 let resultado:number = 0;
 
 
@@ -38,7 +38,7 @@ if(opcion === 1){
   console.log("Opcion Invalida")
 }
 
-switch calculadora{
+switch calculadora {
   case 1:
     resultado = numero1 + numero2
     dibujarLineas();
