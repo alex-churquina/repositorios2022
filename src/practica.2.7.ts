@@ -7,13 +7,21 @@ mayores a 0 y el porcentaje de positivos respecto del total*/
 let numero: number;
 let numerosPositivos: number = 0;
 let numerosNegativos: number = 0;
-let cantidadDeNumeros: number = 0;
-let contador: number = 0;
+let porcentaje: number = 0;
+let contadorTotal: number = 0;
 let continuar: number = 1;
 
-while (contador !== 0) {
+while (continuar !== 0) {
   numero = Number(prompt("Ingrese cualquier numero + o -"));
   continuar = Number(prompt("¿Desea continuar?"));
-  if (numero < 0) {
+  if (numero > 0) {
+    numerosPositivos++;
+  } else if (numero < 0) {
+    numerosNegativos++;
   }
+  contadorTotal++;
 }
+porcentaje = (numerosPositivos * 100) / contadorTotal;
+console.log("Cantidad de numeros Ingresados: ", contadorTotal);
+console.log("Porcentual de numeros positivos son: ", porcentaje + "%");
+console.log("Cantidad de numeros Negativos Ingresados: ", numerosNegativos);
