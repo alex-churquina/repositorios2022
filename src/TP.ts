@@ -55,6 +55,33 @@ function cargarCantidadDeProductos(arrayCantidadProductos: number[]): void {
   }
 }
 
+function calcularPrecioTotal(
+  arregloPrecio: number[],
+  arregloNumeros: number[]
+): number {
+  let total: number = 0;
+  for (let indice: number = 0; indice < arregloPrecio.length; indice++) {
+    total =
+      total + Number(arregloPrecio[indice]) * Number(arregloNumeros[indice]);
+  }
+  return total;
+}
+
+function mostrarDetalle(): void {
+  console.log("El detalle de su compra es:");
+  for (let indice: number = 0; indice < cantidadDeProductos; indice++) {
+    console.log(
+      numerosDeProductos[indice] +
+        " unidades de" +
+        listaDeProductos[indice] +
+        " a un precio por unidad de" +
+        precioDelProducto[indice] +
+        "=" +
+        precioDelProducto[indice] * numerosDeProductos[indice]
+    );
+  }
+}
+
 let cantidadDeProductos: number = Number(
   prompt("Ingrese cantidad de productos a comprar")
 );
@@ -66,3 +93,15 @@ let precioTotal: number = 0;
 cargarProductos(listaDeProductos);
 cargarPrecioProducto(precioDelProducto);
 cargarCantidadDeProductos(numerosDeProductos);
+precioTotal = calcularPrecioTotal(precioDelProducto, numerosDeProductos);
+
+if (precioTotal < 1000) {
+  mostrarDetalle();
+  console.log("No participas por nada");
+} else if (precioTotal >= 1000 && precioTotal < 2000) {
+  mostrarDetalle();
+  console.log("Participas por un tv");
+} else if (precioTotal >= 3000) {
+  mostrarDetalle();
+  console.log("Participass por 0 km");
+}
